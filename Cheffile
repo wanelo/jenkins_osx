@@ -5,3 +5,6 @@ cookbook 'sprout-homebrew',
 
 cookbook 'wanelo-osx-ci',
   :path => './site-cookbooks/wanelo-osx-ci'
+
+cookbook 'jenkins',
+  :git => 'git@github.com:opscode-cookbooks/jenkins.git'

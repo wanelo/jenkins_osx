@@ -1,7 +1,37 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
+    apache2 (1.8.14)
+    apt (2.3.4)
+    aws (1.0.0)
+    bluepill (2.3.1)
+      rsyslog (>= 0.0.0)
+    build-essential (1.4.2)
+    chef_handler (1.1.4)
     homebrew (1.5.4)
+    iptables (0.12.0)
+    java (1.17.4)
+      aws (>= 0.0.0)
+      windows (>= 0.0.0)
+    nginx (2.2.0)
+      apt (~> 2.2)
+      bluepill (~> 2.3)
+      build-essential (~> 1.4)
+      ohai (~> 1.1)
+      runit (~> 1.2)
+      yum (~> 3.0)
+      yum-epel (>= 0.0.0)
+    ohai (1.1.12)
+    rsyslog (1.10.2)
+    runit (1.5.8)
+      build-essential (>= 0.0.0)
+      yum (~> 3.0)
+      yum-epel (>= 0.0.0)
+    windows (1.12.6)
+      chef_handler (>= 0.0.0)
+    yum (3.0.4)
+    yum-epel (0.2.0)
+      yum (~> 3.0)
 
 GIT
   remote: git://github.com/pivotal-sprout/sprout-homebrew.git
@@ -11,12 +41,27 @@ GIT
     sprout-homebrew (0.1.0)
       homebrew (>= 0.0.0)
 
+GIT
+  remote: git@github.com:opscode-cookbooks/jenkins.git
+  ref: master
+  sha: ece633c2067620edb80c20160991615e539e06a4
+  specs:
+    jenkins (1.2.3)
+      apache2 (>= 0.0.0)
+      apt (>= 0.0.0)
+      iptables (>= 0.0.0)
+      java (>= 0.0.0)
+      nginx (>= 0.0.0)
+      runit (>= 1.0.0)
+      yum (>= 0.0.0)
+
 PATH
   remote: ./site-cookbooks/wanelo-osx-ci
   specs:
     wanelo-osx-ci (0.1.0)
 
 DEPENDENCIES
+  jenkins (>= 0)
   sprout-homebrew (>= 0)
   wanelo-osx-ci (>= 0)
 
