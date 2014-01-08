@@ -1,5 +1,6 @@
 recipes:
 - sprout-homebrew::default
+- wanelo-osx-ci::default
 
 node_attributes:
   sprout:

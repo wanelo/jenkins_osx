@@ -11,6 +11,12 @@ GIT
     sprout-homebrew (0.1.0)
       homebrew (>= 0.0.0)
 
+PATH
+  remote: ./site-cookbooks/wanelo-osx-ci
+  specs:
+    wanelo-osx-ci (0.1.0)
+
 DEPENDENCIES
   sprout-homebrew (>= 0)
+  wanelo-osx-ci (>= 0)
 

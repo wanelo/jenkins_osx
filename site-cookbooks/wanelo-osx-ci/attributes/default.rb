@@ -1,0 +1,1 @@
+default['jenkins']['user'] = 'wanelo'

@@ -2,3 +2,6 @@ site 'http://community.opscode.com/api/v1'
 
 cookbook 'sprout-homebrew',
   :git => 'git://github.com/pivotal-sprout/sprout-homebrew.git'
+
+cookbook 'wanelo-osx-ci',
+  :path => './site-cookbooks/wanelo-osx-ci'
