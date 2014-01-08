@@ -1,5 +1,5 @@
 recipes:
-- sprout-homebrew::default
+#- sprout-homebrew::default
 - wanelo-osx-ci::default
 
 node_attributes:
@@ -8,3 +8,4 @@ node_attributes:
       formulae:
         - nginx
         - jenkins
+
