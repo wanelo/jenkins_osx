@@ -32,31 +32,6 @@ service 'jenkins' do
   action  [:start]
 end
 
-plugins_directory = File.join(node['jenkins']['server']['home'], 'plugins')
-execute 'make plugins directory' do
-  command "mkdir -p #{plugins_directory}"
-  user node['jenkins']['user']
-end
+include_recipe 'wanelo-osx-ci::plugins'
+include_recipe 'wanelo-osx-ci::jobs'
 
-
-plugins = ['scm-api', 'git', 'github-api', 'github', 'git-client', 'notification', 'greenballs', 'campfire']
-plugins.each do |plugin|
-  jenkins_plugin plugin do
-    action :install
-  end
-end
-
-job_name = 'vigorish'
-job_filename = "#{job_name}_config.xml"
-job_config = File.join(node[:jenkins][:node][:home], '.jenkins', job_filename)
-
-jenkins_job job_name do
-  action :nothing
-  config job_config
-end
-
-cookbook_file job_config do
-  source    job_filename
-  notifies  :update, resources(:jenkins_job => job_name), :immediately
-  notifies  :build, resources(:jenkins_job => job_name), :immediately
-end
