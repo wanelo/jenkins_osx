@@ -1,0 +1,9 @@
+recipes:
+- sprout-homebrew::default
+
+node_attributes:
+  sprout:
+    homebrew:
+      formulae:
+        - nginx
+        - jenkins
